@@ -1,0 +1,15 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.27"
+evm_version = "cancun"
+# The demo deploy script writes contract addresses for the web app.
+fs_permissions = [{ access = "write", path = "../../client/demo/src/chains/evm" }]
+
+[fuzz]
+runs = 1000
+
+[lint]
+# Run `forge lint` on its own; on build it buries real errors.
+lint_on_build = false
